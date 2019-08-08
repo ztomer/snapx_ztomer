@@ -69,17 +69,17 @@ if not A_IsAdmin
 SoundPlay *64
 TrayTip, % Settings.programTitle, Loaded
 
-settings := new Settings()
-debug := new Debug(settings)
-updateChecker := new UpdateChecker(settings, Build)
-snapper := new Snapper(settings)
-tray := new Tray(settings, Build, updateChecker, snapper)
+g_settings := new Settings()
+g_debug := new Debug(g_settings)
+g_updateChecker := new UpdateChecker(g_settings, Build)
+g_snapper := new Snapper(g_settings)
+g_tray := new Tray(g_settings, Build, g_updateChecker, g_snapper)
 
 ; Hotkeys
 ; [# - Win], [^ - control], [! - Alt] [+ - shift]
 ; See here: https://www.autohotkey.com/docs/Hotkeys.htm
 
-#If settings.debug > 1
+#If g_settings.debug > 1
 #`::Reload ; for ease of testing during development
 #~::Run, powershell ; opens PowerShell (for Git) in the current working directory
 #If
@@ -87,20 +87,25 @@ tray := new Tray(settings, Build, updateChecker, snapper)
 ; Launch hotkeys
 #!+s::Run, spotify
 
+; Launch Win-Tab
+#Up::Send {LWin down}{Tab}{LWin up}
+; Maximize Window
+#!Up::WinMaximize, A
+#!Down::WinMinimize, A
 #MaxThreadsBuffer On
 
 ; Movement
-#!h::snapper.moveWindow(0, -1, 0, 0, 0) ; move left
-#!j::snapper.moveWindow(0, 0, 0, 1, 0)  ; move down
-#!k::snapper.moveWindow(0, 0, 0, -1, 0) ; move up
-#!l::snapper.moveWindow(0, 1, 0, 0, 0)  ; move right
+#!h::g_snapper.moveWindow(0, -1, 0, 0, 0) ; move left
+#!j::g_snapper.moveWindow(0, 0, 0, 1, 0)  ; move down
+#!k::g_snapper.moveWindow(0, 0, 0, -1, 0) ; move up
+#!l::g_snapper.moveWindow(0, 1, 0, 0, 0)  ; move right
 
 
 ; Sizing
-#!y::snapper.moveWindow(0, 0, -1, 0, 0)  ; decrease width
-#!u::snapper.moveWindow(0, 0, 0, 0, -1)  ; size height toward bottom
-#!i::snapper.moveWindow(0, 0, 0, 0, 1)   ; size height toward top
-#!o::snapper.moveWindow(0, 0, 1, 0, 0)   ; increase width
+#!y::g_snapper.moveWindow(0, 0, -1, 0, 0)  ; decrease width
+#!u::g_snapper.moveWindow(0, 0, 0, 0, -1)  ; size height toward bottom
+#!i::g_snapper.moveWindow(0, 0, 0, 0, 1)   ; size height toward top
+#!o::g_snapper.moveWindow(0, 0, 1, 0, 0)   ; increase width
 
 
 
