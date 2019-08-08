@@ -1,4 +1,4 @@
-Tomer Notes:
+Tomer's notes:
 ====
 This is a personal fork of SnapX, in which I try to capture some of the functionality of my Hammerspoon script.
 Functionality:
