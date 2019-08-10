@@ -1,6 +1,6 @@
 Tomer's notes:
 ====
-This is a personal fork of SnapX, in which I try to capture some of the functionality of my Hammerspoon script.
+This is a personal fork of SnapX, somewhat of a semi-clone of my Hammerspoon scripts
 Functionality:
 * Adjust movement and resize keys to be Vim-like
 * Remap Win+Up to launch Windows' Expose clone
