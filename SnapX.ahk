@@ -1,6 +1,11 @@
 ﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn   ; Enable warnings to assist with detecting common errors.
 #SingleInstance force
+if not A_IsAdmin
+{
+	Run *RunAs "%A_ScriptFullPath%"
+	ExitApp
+}
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
@@ -58,15 +63,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; Startup
 
+
+
 Tray.initIcon()
 
-if not A_IsAdmin
-{
-	Run *RunAs "%A_ScriptFullPath%"
-	ExitApp
-}
-
-SoundPlay *64
+;SoundPlay *64
 TrayTip, % Settings.programTitle, Loaded
 
 g_settings := new Settings()
@@ -85,7 +86,7 @@ g_tray := new Tray(g_settings, Build, g_updateChecker, g_snapper)
 #If
 
 ; Launch hotkeys
-#!+s::Run, spotify
+;#!+s::Run, spotify
 
 ; Launch Win-Tab
 #Up::Send {LWin down}{Tab}{LWin up}
