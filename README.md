@@ -1,10 +1,15 @@
 Tomer's notes:
 ====
 This is a personal fork of SnapX, somewhat of a semi-clone of my Hammerspoon scripts
-Functionality:
-* Adjust movement and resize keys to be Vim-like
-* Remap Win+Up to launch Windows' Expose clone
-* Some other stuff
+
+Featuers:
+[x] Adjust movement and resize keys to be Vim-like
+[x] Remap Win+Up to launch Windows' Expose clone
+[x] Remap Win+Down to minimize active window
+[] Cycle between windows visible 
+[] On-screen Pomodoro timer
+[] Expose with keyboard shortcuts
+[] App global hotkeys
 
 ------
 Orignal Readme be Ben Allred:
