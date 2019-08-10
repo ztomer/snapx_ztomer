@@ -6,11 +6,11 @@ Featuers:
 - [x] Adjust movement and resize keys to be Vim-like
 - [x] Remap Win+Up to launch Windows' Expose clone
 - [x] Remap Win+Down to minimize active window
-- [] Cycle between windows visible 
-- [] On-screen Pomodoro timer
-- [] Expose with keyboard shortcuts
-- [] App global hotkeys
-- [] Less bugs
+- [ ] Cycle between windows visible 
+- [ ] On-screen Pomodoro timer
+- [ ] Expose with keyboard shortcuts
+- [ ] App global hotkeys
+- [ ] Less bugs
 
 ------
 Orignal Readme be Ben Allred:
