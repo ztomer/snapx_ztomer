@@ -2,7 +2,7 @@ Tomer's notes:
 ====
 This is a personal fork of SnapX, somewhat of a semi-clone of my Hammerspoon scripts
 
-Featuers:
+Features:
 - [x] Adjust movement and resize keys to be Vim-like
 - [x] Remap Win+Up to launch Windows' Expose clone
 - [x] Remap Win+Down to minimize active window
